@@ -1,0 +1,312 @@
+baseURL = 'https://aga7hokakological.github.io/'
+languageCode = 'en-us'
+title = 'Minimal Black Theme'
+theme = "minimal-black"
+
+# Enable search index generation and web app manifest
+[outputs]
+  home = ["HTML", "RSS", "JSON", "WebAppManifest"]
+
+[outputFormats.WebAppManifest]
+  mediaType = "application/manifest+json"
+  rel = "manifest"
+  baseName = "manifest"
+  isPlainText = true
+  notAlternative = true
+
+[params]
+  brand = "Saurabh"
+  description = "A minimal personal site"
+
+  # Favicon - Place your favicon files in /static/ directory
+  # Supported formats: .ico, .png, .svg
+  favicon = "icons/favicon.svg"
+  appleTouchIcon = "apple-touch-icon.png"
+
+  # Logo (optional)
+  logo = "images/logo.jpg"
+
+  # Project and blog intro text
+  projectsIntro = "Selected projects to display list." # Can be empty
+  blogIntro = "" # Can be empty
+
+  # Web App Manifest Configuration (PWA support)
+  [params.manifest]
+    themeColor = "#a855f7"
+    backgroundColor = "#000000"
+    categories = ["blog", "portfolio", "developer"]
+
+    # Custom icon configuration (optional)
+    # If not specified, defaults to /icons/android-chrome-*.png
+    # [[params.manifest.icons]]
+    #   src = "/icons/android-chrome-192x192.png"
+    #   sizes = "192x192"
+    #   type = "image/png"
+    #   purpose = "any maskable"
+
+  # Theme Configuration
+  [params.theme]
+    defaultTheme = "dark"  # Options: "light", "dark", "system"
+
+  # Home Page Configuration
+  [params.home]
+    sections = ["hero", "now", "tech-marquee", "projects", "posts"]
+    showNowSection = true
+    showFeaturedProjects = false
+    showLatestPosts = true
+    featuredProjectsLimit = 3
+    latestPostsLimit = 3
+    projectsTitle = "Selected Work"
+    projectsSubtitle = ""
+    blogTitle = "Latest Writing"
+    blogSubtitle = ""
+    techMarqueeLabel = "Experienced In"
+
+    # Technology Stack Display
+    [[params.home.tech]]
+      label = "Solidity"
+      icon = "devicon-solidity-plain"
+
+    [[params.home.tech]]
+      label = "Rust"
+      icon = "devicon-rust-plain"
+
+    [[params.home.tech]]
+      label = "HardHat"
+      icon = "devicon-hardhat-plain"  
+
+    [[params.home.tech]]
+      label = "Python"
+      icon = "devicon-python-plain"    
+
+    [[params.home.tech]]
+      label = "Linux"
+      icon = "devicon-linux-plain"
+
+    [[params.home.tech]]
+      label = "GitHub"
+      icon = "devicon-github-plain"
+
+    [[params.home.tech]]
+      label = "Docker"
+      icon = "devicon-docker-plain"
+
+    # [[params.home.techReverse]]
+      # label = "PostgreSQL"
+      # icon = "devicon-postgresql-plain"
+      
+
+  # About Page Alternative Layout Configuration - Optional
+  [params.about.alt]
+    # Stats displayed in the profile card sidebar
+    [[params.about.alt.stats]]
+      value = "2.5+"
+      label = "Years securing code"
+
+    [[params.about.alt.stats]]
+      value = "40+"
+      label = "Projects Secured"
+
+    [[params.about.alt.stats]]
+      value = "∞"
+      label = "Hours Spent"
+
+    # Skills/Tech Stack badges with icons
+    [[params.about.alt.skills]]
+      label = "Solidity"
+      icon = "devicon-solidity-plain"
+
+    [[params.about.alt.skills]]
+      label = "Rust"
+      icon = "devicon-rust-plain"
+
+    [[params.about.alt.skills]]
+      label = "Python"
+      icon = "devicon-python-plain"
+
+    [[params.about.alt.skills]]
+      label = "Linux"
+      icon = "devicon-linux-plain"
+
+    [[params.about.alt.skills]]
+      label = "NeoVim"
+      icon = "devicon-neovim-plain"
+
+  # Hero Section Configuration
+  [params.hero]
+    badge = "Security Researcher"
+    title = "Hi, I'm Saurabh"
+    role = "Securing on chain ecosystem"
+    summary = '''
+      Blockchain Security Engineer with 2.5+ years of hands-on smart contract auditing experience across Ethereum, Solana, DeFi, and ZK-adjacent systems, including 30+ production protocol audits and incident-response war room support.
+      Strong expertise in Solidity, Rust, and formal security analysis, with experience designing and developing smart contracts for a DeFi protocol.
+    '''
+
+    # avatar = "images/avatar.jpg"  # Optional: 400x400px recommended
+    location = "India"
+    focus = "Currently focused on securing onchain world"
+    available = true
+    availableLabel = "Available for work"
+
+    nowLabel = "Quick Facts"
+    nowIntro = "Right now I'm mainly:"
+    now = [
+      "Finding bugs in smart contract code",
+      "Building tools for security",
+      "Exploring AI for security research"
+    ]
+
+    [params.hero.primary]
+      label = "Read the Blog"
+      href = "/blog/"
+
+    # [params.hero.secondary]
+      # label = "View Projects"
+      # href = "/projects/"
+
+  # Icon Libraries
+  [params.icons]
+    useFontAwesome = true
+    useDevicon = true
+
+  # Social Links
+  [[params.social]]
+    label = "GitHub"
+    url = "https://github.com/aga7hokakological"
+    icon = "fa-brands fa-github"
+
+  [[params.social]]
+    label = "X"
+    url = "https://x.com/0xagathokako"
+    icon = "fa-brands fa-twitter"
+
+  [[params.social]]
+    label = "LinkedIn"
+    url = "https://www.linkedin.com/in/saurabh-mandavkar/"
+    icon = "fa-brands fa-linkedin-in"
+
+  [[params.social]]
+    label = "Email"
+    url = "iamsaurabhmandavkar@protonmail.com"
+    icon = "fa-regular fa-envelope"
+
+  # Analytics Configuration
+  [params.analytics]
+    # Google Analytics (GA4)
+    # googleAnalytics = "G-XXXXXXXXXX"
+
+    # Plausible Analytics (privacy-friendly)
+    # [params.analytics.plausible]
+    #   enabled = true
+    #   domain = "yourdomain.com"
+    #   scriptUrl = "https://plausible.io/js/script.js"
+
+    # Umami Analytics (self-hosted option)
+    # [params.analytics.umami]
+    #   enabled = true
+    #   scriptUrl = "https://analytics.yourdomain.com/script.js"
+    #   websiteId = "your-website-id"
+
+    # Fathom Analytics
+    # [params.analytics.fathom]
+    #   enabled = true
+    #   scriptUrl = "https://cdn.usefathom.com/script.js"
+    #   siteId = "YOUR-SITE-ID"
+
+# Navigation Menu
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pageRef = "/"
+    url = "/"
+    weight = 1
+    identifier = "home"
+    [menu.main.params]
+      icon = "fa-solid fa-house"
+
+  [[menu.main]]
+    name = "About"
+    pageRef = "about"
+    url = "/about/"
+    weight = 2
+    identifier = "about"
+    [menu.main.params]
+      icon = "fa-regular fa-user"
+
+  # [[menu.main]]
+    # name = "About Alt"
+    # pageRef = "about-alternative"
+    # url = "/about-alternative/"
+    # weight = 2
+    # identifier = "about-alternative"
+    # [menu.main.params]
+      # icon = "fa-solid fa-user"
+
+  [[menu.main]]
+    name = "Blog"
+    pageRef = "blog"
+    url = "/blog/"
+    weight = 3
+    identifier = "blog"
+    [menu.main.params]
+      icon = "fa-regular fa-note-sticky"
+
+  # [[menu.main]]
+    # name = "Projects"
+    # pageRef = "projects"
+    # url = "/projects/"
+    # weight = 4
+    # identifier = "projects"
+    # [menu.main.params]
+      # icon = "fa-regular fa-folder-open"
+
+# Markup Configuration
+[markup]
+  # Table of Contents
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+
+  # Goldmark Renderer (Markdown)
+  [markup.goldmark.renderer]
+    unsafe = true
+
+  [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+
+  [markup.goldmark.extensions]
+    typographer = true
+    linkify = true
+    table = true
+    strikethrough = true
+    taskList = true
+    definitionList = true
+    footnote = true
+
+    [markup.goldmark.extensions.extras.delete]
+      enable = true
+    [markup.goldmark.extensions.extras.insert]
+      enable = true
+    [markup.goldmark.extensions.extras.mark]
+      enable = true
+
+  # Syntax Highlighting
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = false
+    style = "monokai"
+    tabWidth = 2
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Privacy Configuration
+[privacy]
+  [privacy.youtube]
+    privacyEnhanced = true
