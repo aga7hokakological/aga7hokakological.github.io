@@ -9,11 +9,11 @@
     <lastBuildDate>Wed, 18 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/fuzzer/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How to use trident fuzzer</title>
-      <link>http://localhost:1313/blog/2026-02-18-how-to-use-trident-fuzzer/</link>
+      <title>Fuzz solana programs like a Pro - Part 1</title>
+      <link>http://localhost:1313/blog/2026-02-18/fuzz-solana-code-like-a-pro-part-1/</link>
       <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2026-02-18-how-to-use-trident-fuzzer/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;&#xA;  &lt;a href=&#34;#introduction&#34; class=&#34;md-heading-anchor&#34;&gt;&#xA;    Introduction&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This is the &lt;strong&gt;markdown&lt;/strong&gt; content of my post.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/2026-02-18/fuzz-solana-code-like-a-pro-part-1/</guid>
+      <description>&lt;p&gt;Smart contract exploits rarely come from obvious code paths. They emerge from unexpected edge case sequences of state transitions that traditional tests never explore.&#xA;Most of the smart contracts today rely heavily on unit tests. Unit tests validate correctness along expected flows. Attackers don’t follow expected flows. This is where fuzzing becomes indispensable.&lt;/p&gt;&#xA;&lt;p&gt;In this article, we’ll walk through how to write real, invariant-driven fuzz tests using Trident, a purpose-built fuzzing framework for Solana programs.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
