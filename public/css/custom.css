@@ -1,0 +1,18 @@
+.subtitle {
+  font-style: italic;
+  color: #837e7e;
+  font-size: 1.1rem;
+  max-width: 700px;
+}
+
+
+.post-item {
+  margin-bottom: 28px;
+}
+
+.post-item .subtitle {
+  font-size: 0.95rem;
+  color: #777;
+  font-style: italic;
+  margin-top: 4px;
+}
