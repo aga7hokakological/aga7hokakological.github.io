@@ -22,6 +22,9 @@
               {{ . }}
             </p>
           {{ end }}
+          {{ with .Params.image }}
+            <img src="{{ . }}" class="mb-6 rounded-lg" />
+          {{ end }}
         </header>
 
         <div class="card card-pad">

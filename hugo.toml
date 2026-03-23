@@ -1,6 +1,6 @@
 baseURL = 'https://aga7hokakological.github.io/'
 languageCode = 'en-us'
-title = 'Minimal Black Theme'
+title = "Saurabh's personal site"
 theme = "minimal-black"
 
 # Enable search index generation and web app manifest
