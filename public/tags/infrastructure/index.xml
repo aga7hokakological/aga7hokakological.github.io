@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Solana on Saurabh&#39;s personal site</title>
-    <link>http://localhost:1313/tags/solana/</link>
-    <description>Recent content in Solana on Saurabh&#39;s personal site</description>
+    <title>Infrastructure on Saurabh&#39;s personal site</title>
+    <link>http://localhost:1313/tags/infrastructure/</link>
+    <description>Recent content in Infrastructure on Saurabh&#39;s personal site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/solana/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Web3’s Real Attack Surface: Beyond Smart Contracts</title>
       <link>http://localhost:1313/blog/2026-04-02/web3s-real-attack-surface-beyond-smart-contracts/</link>
       <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/2026-04-02/web3s-real-attack-surface-beyond-smart-contracts/</guid>
       <description>&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Earlier today, a malicious actor gained unauthorized access to Drift Protocol through a novel attack involving durable nonces, resulting in a rapid takeover of Drift’s Security Council administrative powers.&lt;br&gt;&lt;br&gt;This was a highly sophisticated operation that appears to have involved…&lt;/p&gt;&amp;mdash; Drift (@DriftProtocol) &lt;a href=&#34;https://twitter.com/DriftProtocol/status/2039564437795836039?ref_src=twsrc%5Etfw&#34;&gt;April 2, 2026&lt;/a&gt;&lt;/blockquote&gt;&#xA;&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&#xA;&#xA;&#xA;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;This notice is issued on behalf of Resolv Digital Assets Ltd. in relation to the Resolv protocol.&lt;br&gt;&lt;br&gt;Earlier today, a malicious actor gained unauthorized access to Resolv infrastructure through compromised private key, resulting in the minting of approximately $80M of…&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Fuzz solana programs like a Pro - Part 1</title>
-      <link>http://localhost:1313/blog/2026-02-18/fuzz-solana-code-like-a-pro-part-1/</link>
-      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2026-02-18/fuzz-solana-code-like-a-pro-part-1/</guid>
-      <description>&lt;p&gt;Smart contract exploits rarely come from obvious code paths. They emerge from unexpected edge case sequences of state transitions that traditional tests never explore.&#xA;Most of the smart contracts today rely heavily on unit tests. Unit tests validate correctness along expected flows. Attackers don’t follow expected flows. This is where fuzzing becomes indispensable.&lt;/p&gt;&#xA;&lt;p&gt;In this article, we’ll walk through how to write real, invariant-driven fuzz tests using Trident, a purpose-built fuzzing framework for Solana programs.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

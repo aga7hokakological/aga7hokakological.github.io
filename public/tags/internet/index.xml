@@ -6,14 +6,21 @@
     <description>Recent content in Internet on Saurabh&#39;s personal site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 May 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/internet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Technology, thinking and your dumb brain</title>
+      <link>http://localhost:1313/blog/2021-05-15/technology-thinking-and-your-dumb-brain/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2021-05-15/technology-thinking-and-your-dumb-brain/</guid>
+      <description>&lt;p&gt;&lt;figure class=&#34;md-image&#34;&gt;&#xA;  &lt;a href=&#34;http://localhost:1313/blog/2021-05-15/tech.png&#34; class=&#34;glightbox&#34;&gt;&#xA;    &lt;img&#xA;      src=&#34;http://localhost:1313/blog/2021-05-15/tech.png&#34;&#xA;      alt=&#34;alt&#34;&#xA;      loading=&#34;lazy&#34;&#xA;    /&gt;&#xA;  &lt;/a&gt;&#xA;  &#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;blockquote class=&#34;md-blockquote&#34;&gt;&#xA;    &lt;p&gt;&amp;ldquo;Thinking is difficult, that&amp;rsquo;s why most people judge.&amp;rdquo; - Carl Jung&lt;/p&gt;&#xA;&#xA;  &lt;/blockquote&gt;&lt;p&gt;I don&amp;rsquo;t know if this quote is relevant for this post or not but one thing I know for sure is that technology has changed our way of thinking in every way. &lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-thinking&#34;&gt;&#xA;  &lt;a href=&#34;#what-is-thinking&#34; class=&#34;md-heading-anchor&#34;&gt;&#xA;    What is thinking?&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Thinking is process of consciously using the brain and responding to the world from your reactions to it. Your thinking frame of reference is different from others. It is defined by point of view or perspective, a frame of reference is shaped by our prior knowledge, assumptions values or language, about others. Our frame of reference influence our way of thinking in much broader way. It is important to know that frame of reference can change of way of decision making and thinking.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Internet, Privacy and How Dumb YOU Are..!</title>
       <link>http://localhost:1313/blog/2019-03-04/internet-privacy-and-how-dumb-you-are/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/2019-03-04/internet-privacy-and-how-dumb-you-are/</guid>
-      <description></description>
+      <description>&lt;p&gt;&lt;figure class=&#34;md-image&#34;&gt;&#xA;  &lt;a href=&#34;http://localhost:1313/blog/2019-03-04/privacy.png&#34; class=&#34;glightbox&#34;&gt;&#xA;    &lt;img&#xA;      src=&#34;http://localhost:1313/blog/2019-03-04/privacy.png&#34;&#xA;      alt=&#34;alt&#34;&#xA;      loading=&#34;lazy&#34;&#xA;    /&gt;&#xA;  &lt;/a&gt;&#xA;  &#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;You might be wondering in what sense I have kept this title? But right now this is what is going on everywhere. Millions of people are getting betrayed by the social media and companies and we just don’t care. Internet is big free playground you might say but what is really going behind the scenes is different story today.&lt;/p&gt;&#xA;&lt;p&gt;Today on almost every site you see those “Click on I agree” boxes. Blindly you just share your privacy with them. …. Like wait what are you trying to say? You must have heard about Facebook Cambridge Analytica scandal which exposed almost 87 million profiles for Trump campaign in 2016. If that’s not enough then on September 25, 2018 another potential data leak of 50 million users happened. And this is not related to Facebook only, Amazon, Google, Netflix, etc. are also involved in this privacy related issues.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
