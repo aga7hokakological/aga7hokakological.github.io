@@ -272,7 +272,7 @@
               <span>02 Apr 2026</span>
             
             
-              <span> • 5 min read</span>
+              <span> • 10 min read</span>
             
           </div>
 
@@ -282,16 +282,11 @@
 
         <div class="card card-pad">
           <div class="markdown-body">
-            <p><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Earlier today, a malicious actor gained unauthorized access to Drift Protocol through a novel attack involving durable nonces, resulting in a rapid takeover of Drift’s Security Council administrative powers.<br><br>This was a highly sophisticated operation that appears to have involved…</p>&mdash; Drift (@DriftProtocol) <a href="https://twitter.com/DriftProtocol/status/2039564437795836039?ref_src=twsrc%5Etfw">April 2, 2026</a></blockquote>
+            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">This notice is issued on behalf of Resolv Digital Assets Ltd. in relation to the Resolv protocol.<br><br>Earlier today, a malicious actor gained unauthorized access to Resolv infrastructure through compromised private key, resulting in the minting of approximately $80M of…</p>&mdash; Resolv Labs (@ResolvLabs) <a href="https://twitter.com/ResolvLabs/status/2035830314799599616?ref_src=twsrc%5Etfw">March 22, 2026</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">This notice is issued on behalf of Resolv Digital Assets Ltd. in relation to the Resolv protocol.<br><br>Earlier today, a malicious actor gained unauthorized access to Resolv infrastructure through compromised private key, resulting in the minting of approximately $80M of…</p>&mdash; Resolv Labs (@ResolvLabs) <a href="https://twitter.com/ResolvLabs/status/2035830314799599616?ref_src=twsrc%5Etfw">March 22, 2026</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-</p>
-<p>Once again its proven by the black hats that they don&rsquo;t care how secure your codebase is or how many audits you have done.
-The above 2 hacks happened within 10 days of each other.</p>
+<p>Once again its proven by the black hats that they don&rsquo;t care how secure your codebase is or how many audits you have done.</p>
 <p>There was no reentrancy. No oracle manipulation. No overflow hiding in an unchecked block.
 The contracts behaved exactly as designed.
 And yet, funds were drained.</p>
@@ -308,15 +303,441 @@ And yet, funds were drained.</p>
 <li>No rounding bug</li>
 <li>No economic exploit</li>
 </ul>
-<p>From the smart contracts perspective, nothing went wrong. Every transaction was valid. Every state transition respected the rules. Every invariant encoded in smart contract held true.</p>
+<p>From the smart contract&rsquo;s perspective, nothing went wrong. Every transaction was valid. Every state transition respected the rules. Every invariant encoded in smart contract held true.</p>
 <p>And that is precisely the problem.</p>
+<h3 id="what-happened">
+  <a href="#what-happened" class="md-heading-anchor">
+    What happened
+  </a>
+</h3>
+<p>The crypto industry witnesses over $3.4B in theft in 2025 alone. Majority of it coming from CEX giant <a
+  href="https://www.bybit.com/en/"
+  target="_blank" rel="noopener"
+  class="md-link"
+>
+  Bybit
+</a>
+. And guess what was the issue?
+<strong>A private key theft</strong>. If that was not enough later that year around May, June another 2 major exchanges <a
+  href="https://www.chainalysis.com/blog/nobitex-iranian-exchange-exploit-june-2025/"
+  target="_blank" rel="noopener"
+  class="md-link"
+>
+  Nobitex Exchange
+</a>
+, <a
+  href="https://www.bitdefender.com/en-us/blog/hotforsecurity/phemex-million-crypto-heist"
+  target="_blank" rel="noopener"
+  class="md-link"
+>
+  Phemex Exchange
+</a>
+ got
+hacked because for private key leak.</p>
+<p>And now in 2026 only 1st quarter is completed and we have seen $169.4M lost across 55 incidents in 90 days. Within this 55 exploits not even a single vulnerability
+was novel exploit or a zero day attack. Everything about the attacks is very well documented still we are seeing this many exploits. Guess what almost 40% of $169.4M
+lost is through private key leak. In 1st quarter <a
+  href="http://halborn.com/blog/post/explained-the-step-finance-hack-january-2026"
+  target="_blank" rel="noopener"
+  class="md-link"
+>
+  Step finance
+</a>
+ and recently late March <a
+  href="https://www.chainalysis.com/blog/lessons-from-the-resolv-hack/"
+  target="_blank" rel="noopener"
+  class="md-link"
+>
+  Resolv protocol
+</a>
+ were exploited due to leaked private key.</p>
+<p>And just recently on 1st April we saw another hack ie., Drift Protocol. Yes it was not an April fool.
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">One day someone will get hacked on 1st April and we&#39;re all going to think it was a joke</p>&mdash; MiloTruck (@milotruck) <a href="https://twitter.com/milotruck/status/2039358746275598551?ref_src=twsrc%5Etfw">April 1, 2026</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We are observing unusual activity on the protocol. We are currently investigating. Please do not deposit funds into the protocol while we investigate. This is not an April Fools joke. Proceed with caution until further notice. We’ll provide additional updates from this account.</p>&mdash; Drift (@DriftProtocol) <a href="https://twitter.com/DriftProtocol/status/2039404931778535427?ref_src=twsrc%5Etfw">April 1, 2026</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</p>
+<p>The protocol signer had full control over:</p>
+<ul>
+<li>market creation</li>
+<li>Oracle assignment</li>
+<li>withdrawal limits.</li>
+</ul>
+<p>This many critical functionalities were in the hands of protocol signer but there was no timelock, no multisig, no delay. On top of that it was 2/5 multisig.
+You can check complete postmortem of Drift Protocol <a
+  href="https://x.com/omeragoldberg/status/2039455314089746747?s=20"
+  target="_blank" rel="noopener"
+  class="md-link"
+>
+  here
+</a>
+</p>
 <h3 id="a-pattern-not-an-outlier">
   <a href="#a-pattern-not-an-outlier" class="md-heading-anchor">
     A Pattern, Not an Outlier
   </a>
 </h3>
 <p>These are no longer isolated events.</p>
-<p>They form a repeatable attack template:</p>
+<p>They form a repeatable attack template:
+<figure class="md-image">
+  <a href="/blog/2026-04-02/attack.png" class="glightbox">
+    <img
+      src="/blog/2026-04-02/attack.png"
+      alt="alt"
+      loading="lazy"
+    />
+  </a>
+  
+</figure>
+</p>
+<blockquote class="md-blockquote">
+    <p>Web3 has entered a post-exploit era — where attackers don’t break systems, they operate them.</p>
+
+  </blockquote><p>Smart contract exploits are becoming the exception.</p>
+<h3 id="the-misplaced-security-boundary">
+  <a href="#the-misplaced-security-boundary" class="md-heading-anchor">
+    The Misplaced Security Boundary
+  </a>
+</h3>
+<p>For years, Web3 security has been centered around one idea:</p>
+<blockquote class="md-blockquote">
+    <p>If the smart contract is secure, then the protocol is secure.</p>
+
+  </blockquote><p>This assumption is now outdated.</p>
+<p>Modern protocols operate across multiple layers:</p>
+<p><figure class="md-image">
+  <a href="/blog/2026-04-02/service.png" class="glightbox">
+    <img
+      src="/blog/2026-04-02/service.png"
+      alt="services"
+      loading="lazy"
+    />
+  </a>
+  
+</figure>
+</p>
+<p>Audits focus almost exclusively on the smart contract layer.</p>
+<p><strong>Today attackers they do not.</strong></p>
+<h3 id="the-illusion-of-audited--safe">
+  <a href="#the-illusion-of-audited--safe" class="md-heading-anchor">
+    The Illusion of “Audited = Safe”
+  </a>
+</h3>
+<p>Audits secure logic. Yes they&rsquo;re important. As more and more projects, web2 business make move to onchain.
+The onchain liquidity will keep rising. With that comes the great responsibility of having safe and secure smart contracts.
+But but but there is always but because:</p>
+<p>Attackers target control.</p>
+<p>Even if smart contracts are secure a fully audited protocol can still be drained if:</p>
+<ul>
+<li>Admin keys are compromised</li>
+<li>Upgrade authority is leaked</li>
+<li>Treasury signers are exposed</li>
+</ul>
+<p>Security is not a property of code. It is a property of the entire system.</p>
+<h3 id="infrastructure-is-the-new-attack-surface">
+  <a href="#infrastructure-is-the-new-attack-surface" class="md-heading-anchor">
+    Infrastructure is the New Attack Surface
+  </a>
+</h3>
+<h4 id="execution-vs-control-plane">
+  <a href="#execution-vs-control-plane" class="md-heading-anchor">
+    Execution vs Control Plane
+  </a>
+</h4>
+<h5 id="execution-plane">
+  <a href="#execution-plane" class="md-heading-anchor">
+    Execution Plane:
+  </a>
+</h5>
+<ul>
+<li>Smart contract logic</li>
+<li>State transitions</li>
+<li>On-chain invariants</li>
+</ul>
+<p>All of the above is part of the trigger which isn&rsquo;t in hand of the protocol team. They can do audits for smart contract logic.
+State transition of the contract depends on how transactions are added to the block ie., MEV, transaction re-ordering is controlled by validators.
+All invariants such as <code>deposits(vault) == balanceof(all users)</code> must hold true no matter what but
+it can be broken if there is any vulnerability in the code.</p>
+<h5 id="control-plane">
+  <a href="#control-plane" class="md-heading-anchor">
+    Control Plane:
+  </a>
+</h5>
+<ul>
+<li>Private keys</li>
+<li>Admin roles</li>
+<li>Deployment pipelines</li>
+<li>Backend infrastructure</li>
+<li>Offchain computation</li>
+</ul>
+<p>On the other hand private keys, admin roles, deployement, backend infrastructure, etc. are actually in the hands of the team.
+If private keys are compromised then surely attacker can get hold of the whole TVL of the protocol. There is literally no way to stop the
+bloodbath that happens after that if not acted quickly. Same with admin roles of the protocol.
+You also need to keep in mind about deployment and backend infrastructure. If not then situation like <a
+  href="https://www.chainalysis.com/blog/lessons-from-the-resolv-hack/#:~:text=The%20attacker%20compromised,operation%20they%20chose."
+  target="_blank" rel="noopener"
+  class="md-link"
+>
+  resolv protocol
+</a>
+ hack can happen.</p>
+<p><figure class="md-image">
+  <a href="/blog/2026-04-02/exe-control.png" class="glightbox">
+    <img
+      src="/blog/2026-04-02/exe-control.png"
+      alt="execution-control"
+      loading="lazy"
+    />
+  </a>
+  
+</figure>
+</p>
+<p>A protocol can be <strong>perfectly secure</strong> in the <strong>execution plane</strong> and still be <strong>completely compromised</strong> if the <strong>control plane</strong> is breached.</p>
+<p>The attacker no longer needs to find a bug in solidity smart contracts. They can find one in your DevOps.</p>
+<p><strong>Critical Risk Areas:</strong></p>
+<ul>
+<li>Key storage (hot wallets, env vars)</li>
+<li>Signing infrastructure</li>
+<li>Backend services</li>
+<li>Frontend / DNS</li>
+<li>CI/CD pipelines</li>
+</ul>
+<p>Each of these can bypass the need for any on-chain exploit.</p>
+<h3 id="why-these-attacks-succeed-instantly">
+  <a href="#why-these-attacks-succeed-instantly" class="md-heading-anchor">
+    Why These Attacks Succeed Instantly
+  </a>
+</h3>
+<p>Smart contracts got harder to crack, so attackers moved up the stack to the humans running them. That&rsquo;s not an excuse, it&rsquo;s where the attack surface shifted.
+Key compromise is not inherently catastrophic. In web2 systems key compromises happens a lot. Some projects hardcode their keys in
+github repo and forget about it. Some are targetted via web app vulnerabilities such as XSS, SSRF, etc.
+But here in web3 the things are bit different.</p>
+<p>What makes it catastrophic is instant, irreversible execution.</p>
+<ul>
+<li>No delay</li>
+<li>No visibility</li>
+<li>No secondary approval</li>
+</ul>
+<p>Control compromise is not fatal. Instant execution is.</p>
+<h3 id="security-needs-friction">
+  <a href="#security-needs-friction" class="md-heading-anchor">
+    Security Needs Friction
+  </a>
+</h3>
+<p>What do you mean by security needs friction?</p>
+<p>Smart contracts removed friction from execution. Transactions settle instantly. But in adversarial environments, speed benefits attackers more than defenders.
+So what I meant is we need to <strong>increase the time and efforts required by the attacker to convert key compromise into irreversible loss.</strong></p>
+<p>The goal is not to stop attackers from acting. I mean if we can stop attackers even before they act then it is the perfect setup but if not then we
+ensure that they cannot act instantly and invisibly.</p>
+<p>We define a new security primitive:</p>
+<p>Adversarial Latency: the delay between gaining control and causing irreversible damage.</p>
+<p>Attack pattern:</p>
+<ul>
+<li>Gain access</li>
+<li>Act immediately</li>
+<li>Drain before detection</li>
+</ul>
+<p>Security must break step 2.</p>
+<h3 id="current-web3-infrastructure-security-stack">
+  <a href="#current-web3-infrastructure-security-stack" class="md-heading-anchor">
+    Current Web3 Infrastructure Security Stack
+  </a>
+</h3>
+<p>Don&rsquo;t we already have the solutions to solve this issue? We do.
+Today’s security is mostly built around key protection + authorization, not execution control.</p>
+<ul>
+<li>
+<p><strong>Key Management Solutions (Core Layer)</strong></p>
+</li>
+<li>
+<ol>
+<li>
+<p>MPC Wallets (dominant trend)
+Keys are split into multiple shares
+No single entity holds the full key
+Signing is collaborative</p>
+<ul>
+<li>
+<p>Why it exists: Eliminates single point of failure
+Prevents raw key exposure</p>
+</li>
+<li>
+<p>Reality: If enough shares are compromised the attacker signs anyway</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>
+<p>Multisig Wallets (e.g., Safe)
+M-of-N approvals required
+Enforced on-chain</p>
+<ul>
+<li>
+<p>Strength: Prevents unilateral control</p>
+</li>
+<li>
+<p>Weakness: Keys often live in same infra (correlated risk)
+No delay by default</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>
+<p>Hardware Security Modules (HSMs) / TEEs
+Keys stored in secure hardware
+Signing isolated from OS / memory</p>
+<ul>
+<li>
+<p>Strength: Prevents key extraction</p>
+</li>
+<li>
+<p>Weakness: If attacker controls the signing request then signing still happens</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Transaction-Level Security</strong></p>
+</li>
+<li>
+<ol>
+<li>
+<p>Transaction Simulation
+Simulate tx before execution
+Detect malicious outcomes</p>
+<p>Example: Systems like Hypernative simulate and block risky transactions</p>
+<ul>
+<li>
+<p>Strength: Detects bad intent</p>
+</li>
+<li>
+<p>Weakness: Still relies on correct detection
+Can be bypassed if attacker mimics normal behavior</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Infrastructure Security</strong></p>
+</li>
+<li>
+<ol>
+<li>Zero Trust / Access Control
+Identity-based access
+Strict permissions</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Secrets Management
+Vaults (AWS, Hashicorp, etc.)
+No plaintext keys</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>
+<p>CI/CD Hardening
+Signed deployments
+Restricted pipelines</p>
+<ul>
+<li>
+<p>Strength: Reduces attack surface</p>
+</li>
+<li>
+<p>Weakness: Still assumes prevention is enough</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Human Layer Defenses</strong></p>
+</li>
+</ul>
+<ol>
+<li>
+<p>Hardware wallets</p>
+</li>
+<li>
+<p>MFA / biometrics</p>
+</li>
+<li>
+<p>Phishing protection</p>
+</li>
+</ol>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Drift incident hits hard, it stings for the whole ecosystem.<br><br>Drift has been working around the clock to investigate and contain it. We&#39;re supporting where possible.<br><br>Smart contracts held up. The real targets now are humans: social engineering and opsec weaknesses more than… <a href="https://t.co/1or5OtozKm">https://t.co/1or5OtozKm</a></p>&mdash; Lily Liu (@calilyliu) <a href="https://twitter.com/calilyliu/status/2039652201342050713?ref_src=twsrc%5Etfw">April 2, 2026</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<blockquote class="md-blockquote">
+    <p>Humans remain the weakest link in Web3</p>
+
+  </blockquote><h3 id="friction-invariants-new-layer">
+  <a href="#friction-invariants-new-layer" class="md-heading-anchor">
+    Friction Invariants (New Layer)
+  </a>
+</h3>
+<p>Then am I suggesting anything new? Probably not. The core problem with current solution is that they are focused on preventing compromise.
+But real-world data shows:</p>
+<ul>
+<li>Private key compromises still happen</li>
+<li>Infra breaches still happen</li>
+<li>Humans still get phished</li>
+</ul>
+<p>And when they do:</p>
+<p>There is nothing stopping instant execution.
+The current solutions are Static, isolated, and optional. What we actually need is Dynamic, composable, and mandatory friction at the control boundary.</p>
+<p><strong>What’s Broken Today (Even With Timelocks)</strong></p>
+<ol>
+<li>Friction is Static</li>
+</ol>
+<p>Example: “All upgrades have 24h delay”</p>
+<p>Problem:</p>
+<ul>
+<li>Low-risk action -&gt; unnecessarily slow</li>
+<li>High-risk action -&gt; sometimes still insufficient</li>
+<li>No adaptability</li>
+</ul>
+<ol start="2">
+<li>Friction is Not Context-Aware</li>
+</ol>
+<p>Current systems don’t ask:</p>
+<ul>
+<li>Is this abnormal behavior?</li>
+<li>Is this signer behaving differently?</li>
+<li>Is this transaction unusual in size or pattern?</li>
+</ul>
+<p>Attacker can mimic “normal” flows</p>
+<ol start="3">
+<li>Friction is Optional (Critical flaw)</li>
+</ol>
+<ul>
+<li>Many protocols:</li>
+<li>Skip timelocks for “emergency”</li>
+<li>Have privileged bypass roles</li>
+<li>Use multisig but same infra</li>
+</ul>
+<p>In real attacks friction paths are often bypassed entirely</p>
+<ol start="4">
+<li>No Coupling Between Detection and Execution</li>
+</ol>
+<p>Today Monitoring (e.g. anomaly detection) and Execution (smart contracts) are separate systems.
+Even if something suspicious is detected, it does NOT automatically slow/block execution</p>
+<p>Friction defines how easily and how quickly can control be exercised?</p>
+<p>Formalizing the Time Dimension</p>
+<p>Let:</p>
 <div class="mb-codeblock" id="cb-5feceb66" data-lang="text">
   
   <div class="mb-codeblock-header">
@@ -340,19 +761,8 @@ And yet, funds were drained.</p>
     class="mb-codeblock-content" 
     data-state="expanded"
   >
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">[Target Team / Infra]
-</span></span><span class="line"><span class="cl">        |
-</span></span><span class="line"><span class="cl">        v
-</span></span><span class="line"><span class="cl">[Credential / Key Compromise]
-</span></span><span class="line"><span class="cl">        |
-</span></span><span class="line"><span class="cl">        v
-</span></span><span class="line"><span class="cl">[Legitimate Signing Capability]
-</span></span><span class="line"><span class="cl">        |
-</span></span><span class="line"><span class="cl">        v
-</span></span><span class="line"><span class="cl">[Protocol Executes Valid Actions]
-</span></span><span class="line"><span class="cl">        |
-</span></span><span class="line"><span class="cl">        v
-</span></span><span class="line"><span class="cl">[Funds Extracted]</span></span></code></pre></div><div class="mb-collapse-overlay">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">T_attack = time to drain funds
+</span></span><span class="line"><span class="cl">T_detect = time to detect anomaly</span></span></code></pre></div><div class="mb-collapse-overlay">
         <button class="mb-expand-trigger">
           <i class="fas fa-chevron-down"></i>
           <span>Click to expand</span>
@@ -635,21 +1045,7 @@ And yet, funds were drained.</p>
   background: color-mix(in srgb, #cb171e 25%, transparent);
   color: #cb171e;
 }
-</style><blockquote class="md-blockquote">
-    <p>Web3 has entered a post-exploit era — where attackers don’t break systems, they operate them.</p>
-
-  </blockquote><p>Smart contract exploits are becoming the exception.</p>
-<h3 id="the-misplaced-security-boundary">
-  <a href="#the-misplaced-security-boundary" class="md-heading-anchor">
-    The Misplaced Security Boundary
-  </a>
-</h3>
-<p>For years, Web3 security has been centered around one idea:</p>
-<blockquote class="md-blockquote">
-    <p>If the smart contract is secure, then the protocol is secure.</p>
-
-  </blockquote><p>This assumption is now outdated.</p>
-<p>Modern protocols operate across multiple layers:</p>
+</style><p>Current systems:</p>
 <div class="mb-codeblock" id="cb-6b86b273" data-lang="text">
   
   <div class="mb-codeblock-header">
@@ -673,19 +1069,7 @@ And yet, funds were drained.</p>
     class="mb-codeblock-content" 
     data-state="expanded"
   >
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">+--------------------------+
-</span></span><span class="line"><span class="cl">|     User Interface       |
-</span></span><span class="line"><span class="cl">+--------------------------+
-</span></span><span class="line"><span class="cl">|     Backend Services     |
-</span></span><span class="line"><span class="cl">+--------------------------+
-</span></span><span class="line"><span class="cl">|  Signing Infrastructure  |
-</span></span><span class="line"><span class="cl">+--------------------------+
-</span></span><span class="line"><span class="cl">|     Key Management       |
-</span></span><span class="line"><span class="cl">+--------------------------+
-</span></span><span class="line"><span class="cl">|    Smart Contracts       |
-</span></span><span class="line"><span class="cl">+--------------------------+
-</span></span><span class="line"><span class="cl">|       Blockchain         |
-</span></span><span class="line"><span class="cl">+--------------------------+</span></span></code></pre></div><div class="mb-collapse-overlay">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">T_attack &lt;&lt; T_detect -&gt; catastrophic loss</span></span></code></pre></div><div class="mb-collapse-overlay">
         <button class="mb-expand-trigger">
           <i class="fas fa-chevron-down"></i>
           <span>Click to expand</span>
@@ -968,34 +1352,7 @@ And yet, funds were drained.</p>
   background: color-mix(in srgb, #cb171e 25%, transparent);
   color: #cb171e;
 }
-</style><p>Audits focus almost exclusively on the smart contract layer.</p>
-<p><strong>Attackers do not.</strong></p>
-<h3 id="execution-vs-control-plane">
-  <a href="#execution-vs-control-plane" class="md-heading-anchor">
-    Execution vs Control Plane
-  </a>
-</h3>
-<h4 id="execution-plane">
-  <a href="#execution-plane" class="md-heading-anchor">
-    Execution Plane
-  </a>
-</h4>
-<ul>
-<li>Smart contract logic</li>
-<li>State transitions</li>
-<li>On-chain invariants</li>
-</ul>
-<h4 id="control-plane">
-  <a href="#control-plane" class="md-heading-anchor">
-    Control Plane
-  </a>
-</h4>
-<ul>
-<li>Private keys</li>
-<li>Admin roles</li>
-<li>Deployment pipelines</li>
-<li>Backend infrastructure</li>
-</ul>
+</style><p>With friction:</p>
 <div class="mb-codeblock" id="cb-d4735e3a" data-lang="text">
   
   <div class="mb-codeblock-header">
@@ -1019,14 +1376,7 @@ And yet, funds were drained.</p>
     class="mb-codeblock-content" 
     data-state="expanded"
   >
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">        CONTROL PLANE
-</span></span><span class="line"><span class="cl">   (Who is allowed to act?)
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            |
-</span></span><span class="line"><span class="cl">            v
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">       EXECUTION PLANE
-</span></span><span class="line"><span class="cl">   (What actions are valid?)</span></span></code></pre></div><div class="mb-collapse-overlay">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">T_attack &gt; T_detect -&gt; intervention possible</span></span></code></pre></div><div class="mb-collapse-overlay">
         <button class="mb-expand-trigger">
           <i class="fas fa-chevron-down"></i>
           <span>Click to expand</span>
@@ -1309,2022 +1659,86 @@ And yet, funds were drained.</p>
   background: color-mix(in srgb, #cb171e 25%, transparent);
   color: #cb171e;
 }
-</style><p>A protocol can be perfectly secure in the execution plane and still be completely compromised if the control plane is breached.</p>
-<h3 id="the-illusion-of-audited--safe">
-  <a href="#the-illusion-of-audited--safe" class="md-heading-anchor">
-    The Illusion of “Audited = Safe”
-  </a>
-</h3>
-<p>Audits secure logic.</p>
-<p>Attackers target control.</p>
-<p>A fully audited protocol can still be drained if:</p>
-<ul>
-<li>Admin keys are compromised</li>
-<li>Upgrade authority is leaked</li>
-<li>Treasury signers are exposed</li>
-</ul>
-<p>Security is not a property of code. It is a property of the entire system.</p>
-<h3 id="infrastructure-is-the-new-attack-surface">
-  <a href="#infrastructure-is-the-new-attack-surface" class="md-heading-anchor">
-    Infrastructure is the New Attack Surface
-  </a>
-</h3>
-<p>The attacker no longer needs to find a bug in Solidity. They can find one in your DevOps.</p>
-<p><strong>Critical Risk Areas:</strong></p>
-<ul>
-<li>Key storage (hot wallets, env vars)</li>
-<li>Signing infrastructure</li>
-<li>Backend services</li>
-<li>Frontend / DNS</li>
-<li>CI/CD pipelines</li>
-</ul>
-<p>Each of these can bypass the need for any on-chain exploit.</p>
-<h3 id="invariant-security-vs-control-security">
-  <a href="#invariant-security-vs-control-security" class="md-heading-anchor">
-    Invariant Security vs Control Security
-  </a>
-</h3>
-<p><strong>On-Chain Invariants:</strong></p>
-<ul>
-<li>Supply conservation</li>
-<li>Balance correctness</li>
-<li>Access control logic</li>
-</ul>
-<p><strong>Off-Chain (Control) Invariants:</strong></p>
-<ul>
-<li>Keys remain confidential</li>
-<li>Signers are legitimate</li>
-<li>Infrastructure integrity holds</li>
-</ul>
-<div class="mb-codeblock" id="cb-4e074085" data-lang="text">
-  
-  <div class="mb-codeblock-header">
-    <div class="mb-codeblock-left">
-      <span class="mb-codeblock-badge">
-        TEXT
-      </span></div>
-
-    <div class="mb-codeblock-actions"><button class="mb-action-btn mb-collapse-btn" data-collapsed="false" aria-label="Collapse code">
-          <i class="fas fa-compress-alt"></i>
-          <span>Collapse</span>
-        </button><button class="mb-action-btn mb-copy-btn" aria-label="Copy code">
-        <i class="fas fa-copy"></i>
-        <span>Copy</span>
-      </button>
-    </div>
-  </div>
-
-  
-  <div 
-    class="mb-codeblock-content" 
-    data-state="expanded"
-  >
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">         SYSTEM SECURITY
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">   +-----------------------+
-</span></span><span class="line"><span class="cl">   |   On-Chain Invariants |
-</span></span><span class="line"><span class="cl">   +-----------------------+
-</span></span><span class="line"><span class="cl">   |  Off-Chain Invariants |
-</span></span><span class="line"><span class="cl">   +-----------------------+</span></span></code></pre></div><div class="mb-collapse-overlay">
-        <button class="mb-expand-trigger">
-          <i class="fas fa-chevron-down"></i>
-          <span>Click to expand</span>
-        </button>
-      </div></div>
-</div>
-
-<script>
-(function() {
-  'use strict';
-  
-  const codeblock = document.getElementById('cb-4e074085');
-  if (!codeblock) return;
-
-  const copyBtn = codeblock.querySelector('.mb-copy-btn');
-  const collapseBtn = codeblock.querySelector('.mb-collapse-btn');
-  const content = codeblock.querySelector('.mb-codeblock-content');
-  const overlay = codeblock.querySelector('.mb-collapse-overlay');
-  const expandTrigger = overlay?.querySelector('.mb-expand-trigger');
-
-  
-  
-  
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async function() {
-      let codeText = '';
-
-      
-      const codeCell = codeblock.querySelector('.lntd:last-child code');
-      if (codeCell) {
-        codeText = codeCell.textContent || codeCell.innerText || '';
-      } else {
-        
-        const codeEl = codeblock.querySelector('pre code');
-        codeText = codeEl ? (codeEl.textContent || codeEl.innerText || '') : '';
-      }
-
-      try {
-        await navigator.clipboard.writeText(codeText.trim());
-        
-        
-        const originalHTML = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-        copyBtn.classList.add('mb-btn-success');
-        
-        setTimeout(() => {
-          copyBtn.innerHTML = originalHTML;
-          copyBtn.classList.remove('mb-btn-success');
-        }, 2000);
-      } catch (err) {
-        console.error('Failed to copy code:', err);
-        
-        
-        const textArea = document.createElement('textarea');
-        textArea.value = codeText.trim();
-        textArea.style.position = 'fixed';
-        textArea.style.opacity = '0';
-        document.body.appendChild(textArea);
-        textArea.select();
-        
-        try {
-          document.execCommand('copy');
-          copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-          setTimeout(() => {
-            copyBtn.innerHTML = '<i class="fas fa-copy"></i><span>Copy</span>';
-          }, 2000);
-        } catch (fallbackErr) {
-          console.error('Fallback copy failed:', fallbackErr);
-        }
-        
-        document.body.removeChild(textArea);
-      }
-    });
-  }
-
-  
-  
-  
-  if (collapseBtn && content && overlay) {
-    const collapsedHeight =  200 ;
-    
-    function toggleCollapse() {
-      const isCollapsed = content.dataset.state === 'collapsed';
-      
-      if (isCollapsed) {
-        
-        content.style.maxHeight = '';
-        content.style.overflow = '';
-        content.dataset.state = 'expanded';
-        overlay.style.display = 'none';
-        collapseBtn.innerHTML = '<i class="fas fa-compress-alt"></i><span>Collapse</span>';
-        collapseBtn.dataset.collapsed = 'false';
-      } else {
-        
-        content.style.maxHeight = collapsedHeight + 'px';
-        content.style.overflow = 'hidden';
-        content.dataset.state = 'collapsed';
-        overlay.style.display = 'flex';
-        collapseBtn.innerHTML = '<i class="fas fa-expand-alt"></i><span>Expand</span>';
-        collapseBtn.dataset.collapsed = 'true';
-      }
-    }
-
-    
-    if ('expanded' === 'collapsed') {
-      content.dataset.state = 'collapsed';
-      overlay.style.display = 'flex';
-      collapseBtn.innerHTML = '<i class="fas fa-expand-alt"></i><span>Expand</span>';
-      collapseBtn.dataset.collapsed = 'true';
-    }
-
-    collapseBtn.addEventListener('click', toggleCollapse);
-    
-    if (expandTrigger) {
-      expandTrigger.addEventListener('click', toggleCollapse);
-    }
-  }
-})();
-</script>
-
-<style>
- 
-
-.mb-codeblock-filename {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: var(--color-text);
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.35rem;
-  background: color-mix(in srgb, var(--color-bg) 40%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
-}
-
-.mb-action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  background: transparent;
-  border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  font-size: 0.7rem;
-  padding: 0.35rem 0.65rem;
-  border-radius: 0.4rem;
-  transition: all 0.15s ease-out;
-  font-family: inherit;
-}
-
-.mb-action-btn:hover {
-  color: var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-  border-color: var(--color-accent);
-  transform: translateY(-1px);
-}
-
-.mb-action-btn:active {
-  transform: translateY(0);
-}
-
-.mb-action-btn i {
-  font-size: 0.7rem;
-}
-
-.mb-btn-success {
-  color: #22c55e !important;
-  border-color: #22c55e !important;
-  background: color-mix(in srgb, #22c55e 12%, transparent) !important;
-}
-
-.mb-collapse-overlay {
-  display: none;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.3) 40%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 1rem;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.mb-expand-trigger {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 20%, transparent);
-  color: var(--color-accent);
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease-out;
-  backdrop-filter: blur(8px);
-}
-
-.mb-expand-trigger:hover {
-  background: color-mix(in srgb, var(--color-accent) 30%, transparent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
-}
-
-.mb-expand-trigger i {
-  font-size: 0.7rem;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(3px);
-  }
-}
-
- 
-.mb-codeblock[data-lang="javascript"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="js"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #f7df1e 25%, transparent);
-  color: #f7df1e;
-}
-
-.mb-codeblock[data-lang="typescript"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="ts"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #3178c6 25%, transparent);
-  color: #3178c6;
-}
-
-.mb-codeblock[data-lang="python"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="py"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #3776ab 25%, transparent);
-  color: #3776ab;
-}
-
-.mb-codeblock[data-lang="go"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #00add8 25%, transparent);
-  color: #00add8;
-}
-
-.mb-codeblock[data-lang="rust"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="rs"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #ce422b 25%, transparent);
-  color: #ce422b;
-}
-
-.mb-codeblock[data-lang="html"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #e34c26 25%, transparent);
-  color: #e34c26;
-}
-
-.mb-codeblock[data-lang="css"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #264de4 25%, transparent);
-  color: #264de4;
-}
-
-.mb-codeblock[data-lang="bash"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="sh"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="shell"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #4eaa25 25%, transparent);
-  color: #4eaa25;
-}
-
-.mb-codeblock[data-lang="json"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #000000 25%, transparent);
-  color: #dddddd;
-}
-
-.mb-codeblock[data-lang="yaml"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="yml"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #cb171e 25%, transparent);
-  color: #cb171e;
-}
-</style><p>Most protocols verify only half the system.</p>
-<h3 id="why-these-attacks-succeed-instantly">
-  <a href="#why-these-attacks-succeed-instantly" class="md-heading-anchor">
-    Why These Attacks Succeed Instantly
-  </a>
-</h3>
-<p>Key compromise is not inherently catastrophic.</p>
-<p>What makes it catastrophic is instant, irreversible execution.</p>
-<ul>
-<li>No delay</li>
-<li>No visibility</li>
-<li>No secondary approval</li>
-</ul>
-<p>Control compromise is not fatal. Instant execution is.</p>
-<h3 id="security-needs-friction">
-  <a href="#security-needs-friction" class="md-heading-anchor">
-    Security Needs Friction
-  </a>
-</h3>
-<p>Smart contracts removed friction from execution.</p>
-<p>Transactions settle instantly.</p>
-<p>But in adversarial environments, speed benefits attackers more than defenders.</p>
-<p>The goal is not to stop attackers from acting. It is to ensure they cannot act instantly and invisibly.</p>
-<h3 id="from-friction-to-adversarial-latency">
-  <a href="#from-friction-to-adversarial-latency" class="md-heading-anchor">
-    From Friction to Adversarial Latency
-  </a>
-</h3>
-<p>We define a new security primitive:</p>
-<p>Adversarial Latency — the delay between gaining control and causing irreversible damage.</p>
-<p>Attack pattern:</p>
-<p>Gain access
-Act immediately
-Drain before detection</p>
-<p>Security must break step 2.</p>
-<h3 id="friction-invariants-new-layer">
-  <a href="#friction-invariants-new-layer" class="md-heading-anchor">
-    Friction Invariants (New Layer)
-  </a>
-</h3>
-<p>We extend the model:</p>
-<div class="mb-codeblock" id="cb-4b227777" data-lang="text">
-  
-  <div class="mb-codeblock-header">
-    <div class="mb-codeblock-left">
-      <span class="mb-codeblock-badge">
-        TEXT
-      </span></div>
-
-    <div class="mb-codeblock-actions"><button class="mb-action-btn mb-collapse-btn" data-collapsed="false" aria-label="Collapse code">
-          <i class="fas fa-compress-alt"></i>
-          <span>Collapse</span>
-        </button><button class="mb-action-btn mb-copy-btn" aria-label="Copy code">
-        <i class="fas fa-copy"></i>
-        <span>Copy</span>
-      </button>
-    </div>
-  </div>
-
-  
-  <div 
-    class="mb-codeblock-content" 
-    data-state="expanded"
-  >
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">        SYSTEM SECURITY MODEL
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">   +-------------------------+
-</span></span><span class="line"><span class="cl">   | 🟦 Execution Invariants |
-</span></span><span class="line"><span class="cl">   +-------------------------+
-</span></span><span class="line"><span class="cl">   | 🟨 Control Invariants   |
-</span></span><span class="line"><span class="cl">   +-------------------------+
-</span></span><span class="line"><span class="cl">   | 🟥  Friction Invariants |
-</span></span><span class="line"><span class="cl">   +-------------------------+</span></span></code></pre></div><div class="mb-collapse-overlay">
-        <button class="mb-expand-trigger">
-          <i class="fas fa-chevron-down"></i>
-          <span>Click to expand</span>
-        </button>
-      </div></div>
-</div>
-
-<script>
-(function() {
-  'use strict';
-  
-  const codeblock = document.getElementById('cb-4b227777');
-  if (!codeblock) return;
-
-  const copyBtn = codeblock.querySelector('.mb-copy-btn');
-  const collapseBtn = codeblock.querySelector('.mb-collapse-btn');
-  const content = codeblock.querySelector('.mb-codeblock-content');
-  const overlay = codeblock.querySelector('.mb-collapse-overlay');
-  const expandTrigger = overlay?.querySelector('.mb-expand-trigger');
-
-  
-  
-  
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async function() {
-      let codeText = '';
-
-      
-      const codeCell = codeblock.querySelector('.lntd:last-child code');
-      if (codeCell) {
-        codeText = codeCell.textContent || codeCell.innerText || '';
-      } else {
-        
-        const codeEl = codeblock.querySelector('pre code');
-        codeText = codeEl ? (codeEl.textContent || codeEl.innerText || '') : '';
-      }
-
-      try {
-        await navigator.clipboard.writeText(codeText.trim());
-        
-        
-        const originalHTML = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-        copyBtn.classList.add('mb-btn-success');
-        
-        setTimeout(() => {
-          copyBtn.innerHTML = originalHTML;
-          copyBtn.classList.remove('mb-btn-success');
-        }, 2000);
-      } catch (err) {
-        console.error('Failed to copy code:', err);
-        
-        
-        const textArea = document.createElement('textarea');
-        textArea.value = codeText.trim();
-        textArea.style.position = 'fixed';
-        textArea.style.opacity = '0';
-        document.body.appendChild(textArea);
-        textArea.select();
-        
-        try {
-          document.execCommand('copy');
-          copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-          setTimeout(() => {
-            copyBtn.innerHTML = '<i class="fas fa-copy"></i><span>Copy</span>';
-          }, 2000);
-        } catch (fallbackErr) {
-          console.error('Fallback copy failed:', fallbackErr);
-        }
-        
-        document.body.removeChild(textArea);
-      }
-    });
-  }
-
-  
-  
-  
-  if (collapseBtn && content && overlay) {
-    const collapsedHeight =  200 ;
-    
-    function toggleCollapse() {
-      const isCollapsed = content.dataset.state === 'collapsed';
-      
-      if (isCollapsed) {
-        
-        content.style.maxHeight = '';
-        content.style.overflow = '';
-        content.dataset.state = 'expanded';
-        overlay.style.display = 'none';
-        collapseBtn.innerHTML = '<i class="fas fa-compress-alt"></i><span>Collapse</span>';
-        collapseBtn.dataset.collapsed = 'false';
-      } else {
-        
-        content.style.maxHeight = collapsedHeight + 'px';
-        content.style.overflow = 'hidden';
-        content.dataset.state = 'collapsed';
-        overlay.style.display = 'flex';
-        collapseBtn.innerHTML = '<i class="fas fa-expand-alt"></i><span>Expand</span>';
-        collapseBtn.dataset.collapsed = 'true';
-      }
-    }
-
-    
-    if ('expanded' === 'collapsed') {
-      content.dataset.state = 'collapsed';
-      overlay.style.display = 'flex';
-      collapseBtn.innerHTML = '<i class="fas fa-expand-alt"></i><span>Expand</span>';
-      collapseBtn.dataset.collapsed = 'true';
-    }
-
-    collapseBtn.addEventListener('click', toggleCollapse);
-    
-    if (expandTrigger) {
-      expandTrigger.addEventListener('click', toggleCollapse);
-    }
-  }
-})();
-</script>
-
-<style>
- 
-
-.mb-codeblock-filename {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: var(--color-text);
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.35rem;
-  background: color-mix(in srgb, var(--color-bg) 40%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
-}
-
-.mb-action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  background: transparent;
-  border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  font-size: 0.7rem;
-  padding: 0.35rem 0.65rem;
-  border-radius: 0.4rem;
-  transition: all 0.15s ease-out;
-  font-family: inherit;
-}
-
-.mb-action-btn:hover {
-  color: var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-  border-color: var(--color-accent);
-  transform: translateY(-1px);
-}
-
-.mb-action-btn:active {
-  transform: translateY(0);
-}
-
-.mb-action-btn i {
-  font-size: 0.7rem;
-}
-
-.mb-btn-success {
-  color: #22c55e !important;
-  border-color: #22c55e !important;
-  background: color-mix(in srgb, #22c55e 12%, transparent) !important;
-}
-
-.mb-collapse-overlay {
-  display: none;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.3) 40%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 1rem;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.mb-expand-trigger {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 20%, transparent);
-  color: var(--color-accent);
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease-out;
-  backdrop-filter: blur(8px);
-}
-
-.mb-expand-trigger:hover {
-  background: color-mix(in srgb, var(--color-accent) 30%, transparent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
-}
-
-.mb-expand-trigger i {
-  font-size: 0.7rem;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(3px);
-  }
-}
-
- 
-.mb-codeblock[data-lang="javascript"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="js"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #f7df1e 25%, transparent);
-  color: #f7df1e;
-}
-
-.mb-codeblock[data-lang="typescript"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="ts"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #3178c6 25%, transparent);
-  color: #3178c6;
-}
-
-.mb-codeblock[data-lang="python"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="py"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #3776ab 25%, transparent);
-  color: #3776ab;
-}
-
-.mb-codeblock[data-lang="go"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #00add8 25%, transparent);
-  color: #00add8;
-}
-
-.mb-codeblock[data-lang="rust"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="rs"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #ce422b 25%, transparent);
-  color: #ce422b;
-}
-
-.mb-codeblock[data-lang="html"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #e34c26 25%, transparent);
-  color: #e34c26;
-}
-
-.mb-codeblock[data-lang="css"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #264de4 25%, transparent);
-  color: #264de4;
-}
-
-.mb-codeblock[data-lang="bash"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="sh"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="shell"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #4eaa25 25%, transparent);
-  color: #4eaa25;
-}
-
-.mb-codeblock[data-lang="json"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #000000 25%, transparent);
-  color: #dddddd;
-}
-
-.mb-codeblock[data-lang="yaml"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="yml"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #cb171e 25%, transparent);
-  color: #cb171e;
-}
-</style><p>Friction defines:</p>
-<p>How easily and how quickly can control be exercised?</p>
-<p>Formalizing the Time Dimension</p>
-<p>Let:</p>
-<div class="mb-codeblock" id="cb-ef2d127d" data-lang="text">
-  
-  <div class="mb-codeblock-header">
-    <div class="mb-codeblock-left">
-      <span class="mb-codeblock-badge">
-        TEXT
-      </span></div>
-
-    <div class="mb-codeblock-actions"><button class="mb-action-btn mb-collapse-btn" data-collapsed="false" aria-label="Collapse code">
-          <i class="fas fa-compress-alt"></i>
-          <span>Collapse</span>
-        </button><button class="mb-action-btn mb-copy-btn" aria-label="Copy code">
-        <i class="fas fa-copy"></i>
-        <span>Copy</span>
-      </button>
-    </div>
-  </div>
-
-  
-  <div 
-    class="mb-codeblock-content" 
-    data-state="expanded"
-  >
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">T_attack = time to drain funds
-</span></span><span class="line"><span class="cl">T_detect = time to detect anomaly</span></span></code></pre></div><div class="mb-collapse-overlay">
-        <button class="mb-expand-trigger">
-          <i class="fas fa-chevron-down"></i>
-          <span>Click to expand</span>
-        </button>
-      </div></div>
-</div>
-
-<script>
-(function() {
-  'use strict';
-  
-  const codeblock = document.getElementById('cb-ef2d127d');
-  if (!codeblock) return;
-
-  const copyBtn = codeblock.querySelector('.mb-copy-btn');
-  const collapseBtn = codeblock.querySelector('.mb-collapse-btn');
-  const content = codeblock.querySelector('.mb-codeblock-content');
-  const overlay = codeblock.querySelector('.mb-collapse-overlay');
-  const expandTrigger = overlay?.querySelector('.mb-expand-trigger');
-
-  
-  
-  
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async function() {
-      let codeText = '';
-
-      
-      const codeCell = codeblock.querySelector('.lntd:last-child code');
-      if (codeCell) {
-        codeText = codeCell.textContent || codeCell.innerText || '';
-      } else {
-        
-        const codeEl = codeblock.querySelector('pre code');
-        codeText = codeEl ? (codeEl.textContent || codeEl.innerText || '') : '';
-      }
-
-      try {
-        await navigator.clipboard.writeText(codeText.trim());
-        
-        
-        const originalHTML = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-        copyBtn.classList.add('mb-btn-success');
-        
-        setTimeout(() => {
-          copyBtn.innerHTML = originalHTML;
-          copyBtn.classList.remove('mb-btn-success');
-        }, 2000);
-      } catch (err) {
-        console.error('Failed to copy code:', err);
-        
-        
-        const textArea = document.createElement('textarea');
-        textArea.value = codeText.trim();
-        textArea.style.position = 'fixed';
-        textArea.style.opacity = '0';
-        document.body.appendChild(textArea);
-        textArea.select();
-        
-        try {
-          document.execCommand('copy');
-          copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-          setTimeout(() => {
-            copyBtn.innerHTML = '<i class="fas fa-copy"></i><span>Copy</span>';
-          }, 2000);
-        } catch (fallbackErr) {
-          console.error('Fallback copy failed:', fallbackErr);
-        }
-        
-        document.body.removeChild(textArea);
-      }
-    });
-  }
-
-  
-  
-  
-  if (collapseBtn && content && overlay) {
-    const collapsedHeight =  200 ;
-    
-    function toggleCollapse() {
-      const isCollapsed = content.dataset.state === 'collapsed';
-      
-      if (isCollapsed) {
-        
-        content.style.maxHeight = '';
-        content.style.overflow = '';
-        content.dataset.state = 'expanded';
-        overlay.style.display = 'none';
-        collapseBtn.innerHTML = '<i class="fas fa-compress-alt"></i><span>Collapse</span>';
-        collapseBtn.dataset.collapsed = 'false';
-      } else {
-        
-        content.style.maxHeight = collapsedHeight + 'px';
-        content.style.overflow = 'hidden';
-        content.dataset.state = 'collapsed';
-        overlay.style.display = 'flex';
-        collapseBtn.innerHTML = '<i class="fas fa-expand-alt"></i><span>Expand</span>';
-        collapseBtn.dataset.collapsed = 'true';
-      }
-    }
-
-    
-    if ('expanded' === 'collapsed') {
-      content.dataset.state = 'collapsed';
-      overlay.style.display = 'flex';
-      collapseBtn.innerHTML = '<i class="fas fa-expand-alt"></i><span>Expand</span>';
-      collapseBtn.dataset.collapsed = 'true';
-    }
-
-    collapseBtn.addEventListener('click', toggleCollapse);
-    
-    if (expandTrigger) {
-      expandTrigger.addEventListener('click', toggleCollapse);
-    }
-  }
-})();
-</script>
-
-<style>
- 
-
-.mb-codeblock-filename {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: var(--color-text);
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.35rem;
-  background: color-mix(in srgb, var(--color-bg) 40%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
-}
-
-.mb-action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  background: transparent;
-  border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  font-size: 0.7rem;
-  padding: 0.35rem 0.65rem;
-  border-radius: 0.4rem;
-  transition: all 0.15s ease-out;
-  font-family: inherit;
-}
-
-.mb-action-btn:hover {
-  color: var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-  border-color: var(--color-accent);
-  transform: translateY(-1px);
-}
-
-.mb-action-btn:active {
-  transform: translateY(0);
-}
-
-.mb-action-btn i {
-  font-size: 0.7rem;
-}
-
-.mb-btn-success {
-  color: #22c55e !important;
-  border-color: #22c55e !important;
-  background: color-mix(in srgb, #22c55e 12%, transparent) !important;
-}
-
-.mb-collapse-overlay {
-  display: none;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.3) 40%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 1rem;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.mb-expand-trigger {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 20%, transparent);
-  color: var(--color-accent);
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease-out;
-  backdrop-filter: blur(8px);
-}
-
-.mb-expand-trigger:hover {
-  background: color-mix(in srgb, var(--color-accent) 30%, transparent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
-}
-
-.mb-expand-trigger i {
-  font-size: 0.7rem;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(3px);
-  }
-}
-
- 
-.mb-codeblock[data-lang="javascript"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="js"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #f7df1e 25%, transparent);
-  color: #f7df1e;
-}
-
-.mb-codeblock[data-lang="typescript"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="ts"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #3178c6 25%, transparent);
-  color: #3178c6;
-}
-
-.mb-codeblock[data-lang="python"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="py"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #3776ab 25%, transparent);
-  color: #3776ab;
-}
-
-.mb-codeblock[data-lang="go"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #00add8 25%, transparent);
-  color: #00add8;
-}
-
-.mb-codeblock[data-lang="rust"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="rs"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #ce422b 25%, transparent);
-  color: #ce422b;
-}
-
-.mb-codeblock[data-lang="html"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #e34c26 25%, transparent);
-  color: #e34c26;
-}
-
-.mb-codeblock[data-lang="css"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #264de4 25%, transparent);
-  color: #264de4;
-}
-
-.mb-codeblock[data-lang="bash"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="sh"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="shell"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #4eaa25 25%, transparent);
-  color: #4eaa25;
-}
-
-.mb-codeblock[data-lang="json"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #000000 25%, transparent);
-  color: #dddddd;
-}
-
-.mb-codeblock[data-lang="yaml"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="yml"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #cb171e 25%, transparent);
-  color: #cb171e;
-}
-</style><p>Current systems:</p>
-<div class="mb-codeblock" id="cb-e7f6c011" data-lang="text">
-  
-  <div class="mb-codeblock-header">
-    <div class="mb-codeblock-left">
-      <span class="mb-codeblock-badge">
-        TEXT
-      </span></div>
-
-    <div class="mb-codeblock-actions"><button class="mb-action-btn mb-collapse-btn" data-collapsed="false" aria-label="Collapse code">
-          <i class="fas fa-compress-alt"></i>
-          <span>Collapse</span>
-        </button><button class="mb-action-btn mb-copy-btn" aria-label="Copy code">
-        <i class="fas fa-copy"></i>
-        <span>Copy</span>
-      </button>
-    </div>
-  </div>
-
-  
-  <div 
-    class="mb-codeblock-content" 
-    data-state="expanded"
-  >
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">T_attack &lt;&lt; T_detect → catastrophic loss</span></span></code></pre></div><div class="mb-collapse-overlay">
-        <button class="mb-expand-trigger">
-          <i class="fas fa-chevron-down"></i>
-          <span>Click to expand</span>
-        </button>
-      </div></div>
-</div>
-
-<script>
-(function() {
-  'use strict';
-  
-  const codeblock = document.getElementById('cb-e7f6c011');
-  if (!codeblock) return;
-
-  const copyBtn = codeblock.querySelector('.mb-copy-btn');
-  const collapseBtn = codeblock.querySelector('.mb-collapse-btn');
-  const content = codeblock.querySelector('.mb-codeblock-content');
-  const overlay = codeblock.querySelector('.mb-collapse-overlay');
-  const expandTrigger = overlay?.querySelector('.mb-expand-trigger');
-
-  
-  
-  
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async function() {
-      let codeText = '';
-
-      
-      const codeCell = codeblock.querySelector('.lntd:last-child code');
-      if (codeCell) {
-        codeText = codeCell.textContent || codeCell.innerText || '';
-      } else {
-        
-        const codeEl = codeblock.querySelector('pre code');
-        codeText = codeEl ? (codeEl.textContent || codeEl.innerText || '') : '';
-      }
-
-      try {
-        await navigator.clipboard.writeText(codeText.trim());
-        
-        
-        const originalHTML = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-        copyBtn.classList.add('mb-btn-success');
-        
-        setTimeout(() => {
-          copyBtn.innerHTML = originalHTML;
-          copyBtn.classList.remove('mb-btn-success');
-        }, 2000);
-      } catch (err) {
-        console.error('Failed to copy code:', err);
-        
-        
-        const textArea = document.createElement('textarea');
-        textArea.value = codeText.trim();
-        textArea.style.position = 'fixed';
-        textArea.style.opacity = '0';
-        document.body.appendChild(textArea);
-        textArea.select();
-        
-        try {
-          document.execCommand('copy');
-          copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-          setTimeout(() => {
-            copyBtn.innerHTML = '<i class="fas fa-copy"></i><span>Copy</span>';
-          }, 2000);
-        } catch (fallbackErr) {
-          console.error('Fallback copy failed:', fallbackErr);
-        }
-        
-        document.body.removeChild(textArea);
-      }
-    });
-  }
-
-  
-  
-  
-  if (collapseBtn && content && overlay) {
-    const collapsedHeight =  200 ;
-    
-    function toggleCollapse() {
-      const isCollapsed = content.dataset.state === 'collapsed';
-      
-      if (isCollapsed) {
-        
-        content.style.maxHeight = '';
-        content.style.overflow = '';
-        content.dataset.state = 'expanded';
-        overlay.style.display = 'none';
-        collapseBtn.innerHTML = '<i class="fas fa-compress-alt"></i><span>Collapse</span>';
-        collapseBtn.dataset.collapsed = 'false';
-      } else {
-        
-        content.style.maxHeight = collapsedHeight + 'px';
-        content.style.overflow = 'hidden';
-        content.dataset.state = 'collapsed';
-        overlay.style.display = 'flex';
-        collapseBtn.innerHTML = '<i class="fas fa-expand-alt"></i><span>Expand</span>';
-        collapseBtn.dataset.collapsed = 'true';
-      }
-    }
-
-    
-    if ('expanded' === 'collapsed') {
-      content.dataset.state = 'collapsed';
-      overlay.style.display = 'flex';
-      collapseBtn.innerHTML = '<i class="fas fa-expand-alt"></i><span>Expand</span>';
-      collapseBtn.dataset.collapsed = 'true';
-    }
-
-    collapseBtn.addEventListener('click', toggleCollapse);
-    
-    if (expandTrigger) {
-      expandTrigger.addEventListener('click', toggleCollapse);
-    }
-  }
-})();
-</script>
-
-<style>
- 
-
-.mb-codeblock-filename {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: var(--color-text);
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.35rem;
-  background: color-mix(in srgb, var(--color-bg) 40%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
-}
-
-.mb-action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  background: transparent;
-  border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  font-size: 0.7rem;
-  padding: 0.35rem 0.65rem;
-  border-radius: 0.4rem;
-  transition: all 0.15s ease-out;
-  font-family: inherit;
-}
-
-.mb-action-btn:hover {
-  color: var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-  border-color: var(--color-accent);
-  transform: translateY(-1px);
-}
-
-.mb-action-btn:active {
-  transform: translateY(0);
-}
-
-.mb-action-btn i {
-  font-size: 0.7rem;
-}
-
-.mb-btn-success {
-  color: #22c55e !important;
-  border-color: #22c55e !important;
-  background: color-mix(in srgb, #22c55e 12%, transparent) !important;
-}
-
-.mb-collapse-overlay {
-  display: none;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.3) 40%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 1rem;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.mb-expand-trigger {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 20%, transparent);
-  color: var(--color-accent);
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease-out;
-  backdrop-filter: blur(8px);
-}
-
-.mb-expand-trigger:hover {
-  background: color-mix(in srgb, var(--color-accent) 30%, transparent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
-}
-
-.mb-expand-trigger i {
-  font-size: 0.7rem;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(3px);
-  }
-}
-
- 
-.mb-codeblock[data-lang="javascript"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="js"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #f7df1e 25%, transparent);
-  color: #f7df1e;
-}
-
-.mb-codeblock[data-lang="typescript"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="ts"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #3178c6 25%, transparent);
-  color: #3178c6;
-}
-
-.mb-codeblock[data-lang="python"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="py"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #3776ab 25%, transparent);
-  color: #3776ab;
-}
-
-.mb-codeblock[data-lang="go"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #00add8 25%, transparent);
-  color: #00add8;
-}
-
-.mb-codeblock[data-lang="rust"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="rs"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #ce422b 25%, transparent);
-  color: #ce422b;
-}
-
-.mb-codeblock[data-lang="html"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #e34c26 25%, transparent);
-  color: #e34c26;
-}
-
-.mb-codeblock[data-lang="css"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #264de4 25%, transparent);
-  color: #264de4;
-}
-
-.mb-codeblock[data-lang="bash"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="sh"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="shell"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #4eaa25 25%, transparent);
-  color: #4eaa25;
-}
-
-.mb-codeblock[data-lang="json"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #000000 25%, transparent);
-  color: #dddddd;
-}
-
-.mb-codeblock[data-lang="yaml"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="yml"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #cb171e 25%, transparent);
-  color: #cb171e;
-}
-</style><p>With friction:</p>
-<div class="mb-codeblock" id="cb-7902699b" data-lang="text">
-  
-  <div class="mb-codeblock-header">
-    <div class="mb-codeblock-left">
-      <span class="mb-codeblock-badge">
-        TEXT
-      </span></div>
-
-    <div class="mb-codeblock-actions"><button class="mb-action-btn mb-collapse-btn" data-collapsed="false" aria-label="Collapse code">
-          <i class="fas fa-compress-alt"></i>
-          <span>Collapse</span>
-        </button><button class="mb-action-btn mb-copy-btn" aria-label="Copy code">
-        <i class="fas fa-copy"></i>
-        <span>Copy</span>
-      </button>
-    </div>
-  </div>
-
-  
-  <div 
-    class="mb-codeblock-content" 
-    data-state="expanded"
-  >
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">T_attack &gt; T_detect → intervention possible</span></span></code></pre></div><div class="mb-collapse-overlay">
-        <button class="mb-expand-trigger">
-          <i class="fas fa-chevron-down"></i>
-          <span>Click to expand</span>
-        </button>
-      </div></div>
-</div>
-
-<script>
-(function() {
-  'use strict';
-  
-  const codeblock = document.getElementById('cb-7902699b');
-  if (!codeblock) return;
-
-  const copyBtn = codeblock.querySelector('.mb-copy-btn');
-  const collapseBtn = codeblock.querySelector('.mb-collapse-btn');
-  const content = codeblock.querySelector('.mb-codeblock-content');
-  const overlay = codeblock.querySelector('.mb-collapse-overlay');
-  const expandTrigger = overlay?.querySelector('.mb-expand-trigger');
-
-  
-  
-  
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async function() {
-      let codeText = '';
-
-      
-      const codeCell = codeblock.querySelector('.lntd:last-child code');
-      if (codeCell) {
-        codeText = codeCell.textContent || codeCell.innerText || '';
-      } else {
-        
-        const codeEl = codeblock.querySelector('pre code');
-        codeText = codeEl ? (codeEl.textContent || codeEl.innerText || '') : '';
-      }
-
-      try {
-        await navigator.clipboard.writeText(codeText.trim());
-        
-        
-        const originalHTML = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-        copyBtn.classList.add('mb-btn-success');
-        
-        setTimeout(() => {
-          copyBtn.innerHTML = originalHTML;
-          copyBtn.classList.remove('mb-btn-success');
-        }, 2000);
-      } catch (err) {
-        console.error('Failed to copy code:', err);
-        
-        
-        const textArea = document.createElement('textarea');
-        textArea.value = codeText.trim();
-        textArea.style.position = 'fixed';
-        textArea.style.opacity = '0';
-        document.body.appendChild(textArea);
-        textArea.select();
-        
-        try {
-          document.execCommand('copy');
-          copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-          setTimeout(() => {
-            copyBtn.innerHTML = '<i class="fas fa-copy"></i><span>Copy</span>';
-          }, 2000);
-        } catch (fallbackErr) {
-          console.error('Fallback copy failed:', fallbackErr);
-        }
-        
-        document.body.removeChild(textArea);
-      }
-    });
-  }
-
-  
-  
-  
-  if (collapseBtn && content && overlay) {
-    const collapsedHeight =  200 ;
-    
-    function toggleCollapse() {
-      const isCollapsed = content.dataset.state === 'collapsed';
-      
-      if (isCollapsed) {
-        
-        content.style.maxHeight = '';
-        content.style.overflow = '';
-        content.dataset.state = 'expanded';
-        overlay.style.display = 'none';
-        collapseBtn.innerHTML = '<i class="fas fa-compress-alt"></i><span>Collapse</span>';
-        collapseBtn.dataset.collapsed = 'false';
-      } else {
-        
-        content.style.maxHeight = collapsedHeight + 'px';
-        content.style.overflow = 'hidden';
-        content.dataset.state = 'collapsed';
-        overlay.style.display = 'flex';
-        collapseBtn.innerHTML = '<i class="fas fa-expand-alt"></i><span>Expand</span>';
-        collapseBtn.dataset.collapsed = 'true';
-      }
-    }
-
-    
-    if ('expanded' === 'collapsed') {
-      content.dataset.state = 'collapsed';
-      overlay.style.display = 'flex';
-      collapseBtn.innerHTML = '<i class="fas fa-expand-alt"></i><span>Expand</span>';
-      collapseBtn.dataset.collapsed = 'true';
-    }
-
-    collapseBtn.addEventListener('click', toggleCollapse);
-    
-    if (expandTrigger) {
-      expandTrigger.addEventListener('click', toggleCollapse);
-    }
-  }
-})();
-</script>
-
-<style>
- 
-
-.mb-codeblock-filename {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: var(--color-text);
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.35rem;
-  background: color-mix(in srgb, var(--color-bg) 40%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
-}
-
-.mb-action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  background: transparent;
-  border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  font-size: 0.7rem;
-  padding: 0.35rem 0.65rem;
-  border-radius: 0.4rem;
-  transition: all 0.15s ease-out;
-  font-family: inherit;
-}
-
-.mb-action-btn:hover {
-  color: var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-  border-color: var(--color-accent);
-  transform: translateY(-1px);
-}
-
-.mb-action-btn:active {
-  transform: translateY(0);
-}
-
-.mb-action-btn i {
-  font-size: 0.7rem;
-}
-
-.mb-btn-success {
-  color: #22c55e !important;
-  border-color: #22c55e !important;
-  background: color-mix(in srgb, #22c55e 12%, transparent) !important;
-}
-
-.mb-collapse-overlay {
-  display: none;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.3) 40%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 1rem;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.mb-expand-trigger {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 20%, transparent);
-  color: var(--color-accent);
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease-out;
-  backdrop-filter: blur(8px);
-}
-
-.mb-expand-trigger:hover {
-  background: color-mix(in srgb, var(--color-accent) 30%, transparent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
-}
-
-.mb-expand-trigger i {
-  font-size: 0.7rem;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(3px);
-  }
-}
-
- 
-.mb-codeblock[data-lang="javascript"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="js"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #f7df1e 25%, transparent);
-  color: #f7df1e;
-}
-
-.mb-codeblock[data-lang="typescript"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="ts"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #3178c6 25%, transparent);
-  color: #3178c6;
-}
-
-.mb-codeblock[data-lang="python"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="py"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #3776ab 25%, transparent);
-  color: #3776ab;
-}
-
-.mb-codeblock[data-lang="go"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #00add8 25%, transparent);
-  color: #00add8;
-}
-
-.mb-codeblock[data-lang="rust"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="rs"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #ce422b 25%, transparent);
-  color: #ce422b;
-}
-
-.mb-codeblock[data-lang="html"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #e34c26 25%, transparent);
-  color: #e34c26;
-}
-
-.mb-codeblock[data-lang="css"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #264de4 25%, transparent);
-  color: #264de4;
-}
-
-.mb-codeblock[data-lang="bash"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="sh"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="shell"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #4eaa25 25%, transparent);
-  color: #4eaa25;
-}
-
-.mb-codeblock[data-lang="json"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #000000 25%, transparent);
-  color: #dddddd;
-}
-
-.mb-codeblock[data-lang="yaml"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="yml"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #cb171e 25%, transparent);
-  color: #cb171e;
-}
 </style><p>Security now depends on time, not just correctness.</p>
 <h3 id="defining-friction-invariants">
   <a href="#defining-friction-invariants" class="md-heading-anchor">
     Defining Friction Invariants
   </a>
 </h3>
-<p>Non-Instantaneity
-Delays on critical actions
-Non-Unilaterality
-Multisig / role separation
-Observability
-Public execution queues
-Context Sensitivity
-Higher risk → higher friction</p>
-<div class="mb-codeblock" id="cb-2c624232" data-lang="text">
-  
-  <div class="mb-codeblock-header">
-    <div class="mb-codeblock-left">
-      <span class="mb-codeblock-badge">
-        TEXT
-      </span></div>
-
-    <div class="mb-codeblock-actions"><button class="mb-action-btn mb-collapse-btn" data-collapsed="false" aria-label="Collapse code">
-          <i class="fas fa-compress-alt"></i>
-          <span>Collapse</span>
-        </button><button class="mb-action-btn mb-copy-btn" aria-label="Copy code">
-        <i class="fas fa-copy"></i>
-        <span>Copy</span>
-      </button>
-    </div>
-  </div>
-
-  
-  <div 
-    class="mb-codeblock-content" 
-    data-state="expanded"
-  >
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Action Requested]
-</span></span><span class="line"><span class="cl">        |
-</span></span><span class="line"><span class="cl">        v
-</span></span><span class="line"><span class="cl">[Risk Evaluation]
-</span></span><span class="line"><span class="cl">        |
-</span></span><span class="line"><span class="cl">        v
-</span></span><span class="line"><span class="cl">[Apply Friction Layer]
-</span></span><span class="line"><span class="cl">   |        |        |
-</span></span><span class="line"><span class="cl"> Delay   Multisig   Alerts
-</span></span><span class="line"><span class="cl">        |
-</span></span><span class="line"><span class="cl">        v
-</span></span><span class="line"><span class="cl">[Execution]</span></span></code></pre></div><div class="mb-collapse-overlay">
-        <button class="mb-expand-trigger">
-          <i class="fas fa-chevron-down"></i>
-          <span>Click to expand</span>
-        </button>
-      </div></div>
-</div>
-
-<script>
-(function() {
-  'use strict';
-  
-  const codeblock = document.getElementById('cb-2c624232');
-  if (!codeblock) return;
-
-  const copyBtn = codeblock.querySelector('.mb-copy-btn');
-  const collapseBtn = codeblock.querySelector('.mb-collapse-btn');
-  const content = codeblock.querySelector('.mb-codeblock-content');
-  const overlay = codeblock.querySelector('.mb-collapse-overlay');
-  const expandTrigger = overlay?.querySelector('.mb-expand-trigger');
-
-  
-  
-  
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async function() {
-      let codeText = '';
-
-      
-      const codeCell = codeblock.querySelector('.lntd:last-child code');
-      if (codeCell) {
-        codeText = codeCell.textContent || codeCell.innerText || '';
-      } else {
-        
-        const codeEl = codeblock.querySelector('pre code');
-        codeText = codeEl ? (codeEl.textContent || codeEl.innerText || '') : '';
-      }
-
-      try {
-        await navigator.clipboard.writeText(codeText.trim());
-        
-        
-        const originalHTML = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-        copyBtn.classList.add('mb-btn-success');
-        
-        setTimeout(() => {
-          copyBtn.innerHTML = originalHTML;
-          copyBtn.classList.remove('mb-btn-success');
-        }, 2000);
-      } catch (err) {
-        console.error('Failed to copy code:', err);
-        
-        
-        const textArea = document.createElement('textarea');
-        textArea.value = codeText.trim();
-        textArea.style.position = 'fixed';
-        textArea.style.opacity = '0';
-        document.body.appendChild(textArea);
-        textArea.select();
-        
-        try {
-          document.execCommand('copy');
-          copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-          setTimeout(() => {
-            copyBtn.innerHTML = '<i class="fas fa-copy"></i><span>Copy</span>';
-          }, 2000);
-        } catch (fallbackErr) {
-          console.error('Fallback copy failed:', fallbackErr);
-        }
-        
-        document.body.removeChild(textArea);
-      }
-    });
-  }
-
-  
-  
-  
-  if (collapseBtn && content && overlay) {
-    const collapsedHeight =  200 ;
-    
-    function toggleCollapse() {
-      const isCollapsed = content.dataset.state === 'collapsed';
-      
-      if (isCollapsed) {
-        
-        content.style.maxHeight = '';
-        content.style.overflow = '';
-        content.dataset.state = 'expanded';
-        overlay.style.display = 'none';
-        collapseBtn.innerHTML = '<i class="fas fa-compress-alt"></i><span>Collapse</span>';
-        collapseBtn.dataset.collapsed = 'false';
-      } else {
-        
-        content.style.maxHeight = collapsedHeight + 'px';
-        content.style.overflow = 'hidden';
-        content.dataset.state = 'collapsed';
-        overlay.style.display = 'flex';
-        collapseBtn.innerHTML = '<i class="fas fa-expand-alt"></i><span>Expand</span>';
-        collapseBtn.dataset.collapsed = 'true';
-      }
-    }
-
-    
-    if ('expanded' === 'collapsed') {
-      content.dataset.state = 'collapsed';
-      overlay.style.display = 'flex';
-      collapseBtn.innerHTML = '<i class="fas fa-expand-alt"></i><span>Expand</span>';
-      collapseBtn.dataset.collapsed = 'true';
-    }
-
-    collapseBtn.addEventListener('click', toggleCollapse);
-    
-    if (expandTrigger) {
-      expandTrigger.addEventListener('click', toggleCollapse);
-    }
-  }
-})();
-</script>
-
-<style>
- 
-
-.mb-codeblock-filename {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: var(--color-text);
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.35rem;
-  background: color-mix(in srgb, var(--color-bg) 40%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
-}
-
-.mb-action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  background: transparent;
-  border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  font-size: 0.7rem;
-  padding: 0.35rem 0.65rem;
-  border-radius: 0.4rem;
-  transition: all 0.15s ease-out;
-  font-family: inherit;
-}
-
-.mb-action-btn:hover {
-  color: var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-  border-color: var(--color-accent);
-  transform: translateY(-1px);
-}
-
-.mb-action-btn:active {
-  transform: translateY(0);
-}
-
-.mb-action-btn i {
-  font-size: 0.7rem;
-}
-
-.mb-btn-success {
-  color: #22c55e !important;
-  border-color: #22c55e !important;
-  background: color-mix(in srgb, #22c55e 12%, transparent) !important;
-}
-
-.mb-collapse-overlay {
-  display: none;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.3) 40%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 1rem;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.mb-expand-trigger {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 20%, transparent);
-  color: var(--color-accent);
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease-out;
-  backdrop-filter: blur(8px);
-}
-
-.mb-expand-trigger:hover {
-  background: color-mix(in srgb, var(--color-accent) 30%, transparent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
-}
-
-.mb-expand-trigger i {
-  font-size: 0.7rem;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(3px);
-  }
-}
-
- 
-.mb-codeblock[data-lang="javascript"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="js"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #f7df1e 25%, transparent);
-  color: #f7df1e;
-}
-
-.mb-codeblock[data-lang="typescript"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="ts"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #3178c6 25%, transparent);
-  color: #3178c6;
-}
-
-.mb-codeblock[data-lang="python"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="py"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #3776ab 25%, transparent);
-  color: #3776ab;
-}
-
-.mb-codeblock[data-lang="go"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #00add8 25%, transparent);
-  color: #00add8;
-}
-
-.mb-codeblock[data-lang="rust"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="rs"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #ce422b 25%, transparent);
-  color: #ce422b;
-}
-
-.mb-codeblock[data-lang="html"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #e34c26 25%, transparent);
-  color: #e34c26;
-}
-
-.mb-codeblock[data-lang="css"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #264de4 25%, transparent);
-  color: #264de4;
-}
-
-.mb-codeblock[data-lang="bash"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="sh"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="shell"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #4eaa25 25%, transparent);
-  color: #4eaa25;
-}
-
-.mb-codeblock[data-lang="json"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #000000 25%, transparent);
-  color: #dddddd;
-}
-
-.mb-codeblock[data-lang="yaml"] .mb-codeblock-badge,
-.mb-codeblock[data-lang="yml"] .mb-codeblock-badge {
-  background: color-mix(in srgb, #cb171e 25%, transparent);
-  color: #cb171e;
-}
-</style><h3 id="selective-friction">
-  <a href="#selective-friction" class="md-heading-anchor">
-    Selective Friction
+<ul>
+<li>Non-Instantaneity: Delays on critical actions</li>
+<li>Non-Unilaterality: Multisig / role separation</li>
+<li>Observability: Public execution queues</li>
+<li>Context Sensitivity: Higher risk -&gt; higher friction</li>
+</ul>
+<p><figure class="md-image">
+  <a href="/blog/2026-04-02/evaluation.png" class="glightbox">
+    <img
+      src="/blog/2026-04-02/evaluation.png"
+      alt="evaluation"
+      loading="lazy"
+    />
   </a>
-</h3>
-<p>Apply friction only where it matters:</p>
-<p>Ownership transfers
-Upgrades
-Treasury movements</p>
-<p>Not on user flows.</p>
-<p>Security that breaks usability gets removed.</p>
-<h3 id="programmable-friction">
-  <a href="#programmable-friction" class="md-heading-anchor">
-    Programmable Friction
-  </a>
-</h3>
-<p>Static defenses are insufficient.</p>
-<p>Introduce a risk-aware friction layer:</p>
-<p>Low risk → instant
-Medium → multisig
-High → delay + alerts</p>
-<p>Security becomes adaptive.</p>
-<h3 id="a-new-security-boundary">
-  <a href="#a-new-security-boundary" class="md-heading-anchor">
-    A New Security Boundary
-  </a>
-</h3>
-<p>Even if control is compromised:</p>
-<p>Damage must not be instantaneous.</p>
+  
+</figure>
+</p>
+<p>If protocols were to implement time delays on smart contract upgrades, treasury withdrawal, governance then
+there is chance of detection of attack if it is happening then attackers might not be able drain the protocol.
+Protocol can even implement multi-step execution rather than simple multisig.
+The <code>Drift protocol</code> situation occurred because of the concept of <a
+  href="https://solana.com/developers/guides/advanced/introduction-to-durable-nonces"
+  target="_blank" rel="noopener"
+  class="md-link"
+>
+  durable nonces
+</a>
+
+where signature can already be sent for execution.
+The security can be improved with context aware friction such as:</p>
+<ul>
+<li>If there is large transaction -&gt; delay it</li>
+<li>If there is new operator -&gt; can execute if allowed</li>
+<li>New contract -&gt; requires multisig to deploy it or upgrade it</li>
+</ul>
+<p>The most important thing to do will be to add circuit breaker which allows the protocol to pause the important functionality in emergency situations.</p>
+<p>Even if control is compromised damage must not be instantaneous.</p>
 <p>This is the difference between:</p>
-<p>Irrecoverable loss
-Containable incident</p>
+<p>Irrecoverable loss and containable incident</p>
 <h3 id="conclusion">
   <a href="#conclusion" class="md-heading-anchor">
     Conclusion
   </a>
 </h3>
-<p>In modern Web3 exploits, <strong>the attacker doesn’t need a vulnerability.</strong>
-They need a signature and a system that executes it instantly.
-The system doesn’t fail when code breaks.
-It fails when control is lost and when that loss translates into immediate, irreversible action.
-The next generation of exploits will not violate invariants.
-They will satisfy them.
-The only question is:
-How fast can they do it?</p>
+<p>Web3 security has spent years optimizing for correctness. We proved that contracts can enforce invariants. We built systems that execute exactly as specified.
+And in doing so, we assumed that correctness was enough. It isn’t.</p>
+<p>Recent incidents make one thing clear:</p>
+<p>The system does not fail when invalid actions occur.
+It fails when valid actions are executed by the wrong actor, at the wrong time, without resistance.</p>
+<p>Today’s security stack focuses on preventing compromise:</p>
+<ul>
+<li>Protect the key</li>
+<li>Verify the transaction</li>
+<li>Execute instantly</li>
+</ul>
+<p>But real-world attacks don’t need broken logic.
+They need control and speed. This is the gap. The next evolution of Web3 security is not about new primitives.
+It is about how those primitives are orchestrated under adversarial conditions.</p>
+<p>Timelocks, multisigs, simulations they already exist.
+But they are static, optional, and disconnected.</p>
+<p>What’s missing is a system that:</p>
+<ul>
+<li>They adapts to risk in real time</li>
+<li>Couples detection with enforcement</li>
+<li>And ensures that high-impact actions are never instantaneous, silent, or unilateral</li>
+</ul>
+<p>This is where friction becomes fundamental. Not as inconvenience, but as a security boundary.
+A well-designed system does not assume safety.
+It assumes compromise and ensures that compromise cannot immediately become catastrophe.
+In this model, security is no longer binary.</p>
+<p>A system is secure if it can detect and respond before irreversible damage occurs.
+The future of Web3 security will not be defined by who writes the safest contracts.
+It will be defined by who builds systems where even if an attacker gains control,
+they cannot win fast enough.</p>
 
           </div>
         </div>
@@ -3348,25 +1762,20 @@ How fast can they do it?</p>
     <li>
       <ul>
         <li><a href="#incident-without-failure">Incident Without Failure</a></li>
+        <li><a href="#what-happened">What happened</a></li>
         <li><a href="#a-pattern-not-an-outlier">A Pattern, Not an Outlier</a></li>
         <li><a href="#the-misplaced-security-boundary">The Misplaced Security Boundary</a></li>
-        <li><a href="#execution-vs-control-plane">Execution vs Control Plane</a>
+        <li><a href="#the-illusion-of-audited--safe">The Illusion of “Audited = Safe”</a></li>
+        <li><a href="#infrastructure-is-the-new-attack-surface">Infrastructure is the New Attack Surface</a>
           <ul>
-            <li><a href="#execution-plane">Execution Plane</a></li>
-            <li><a href="#control-plane">Control Plane</a></li>
+            <li><a href="#execution-vs-control-plane">Execution vs Control Plane</a></li>
           </ul>
         </li>
-        <li><a href="#the-illusion-of-audited--safe">The Illusion of “Audited = Safe”</a></li>
-        <li><a href="#infrastructure-is-the-new-attack-surface">Infrastructure is the New Attack Surface</a></li>
-        <li><a href="#invariant-security-vs-control-security">Invariant Security vs Control Security</a></li>
         <li><a href="#why-these-attacks-succeed-instantly">Why These Attacks Succeed Instantly</a></li>
         <li><a href="#security-needs-friction">Security Needs Friction</a></li>
-        <li><a href="#from-friction-to-adversarial-latency">From Friction to Adversarial Latency</a></li>
+        <li><a href="#current-web3-infrastructure-security-stack">Current Web3 Infrastructure Security Stack</a></li>
         <li><a href="#friction-invariants-new-layer">Friction Invariants (New Layer)</a></li>
         <li><a href="#defining-friction-invariants">Defining Friction Invariants</a></li>
-        <li><a href="#selective-friction">Selective Friction</a></li>
-        <li><a href="#programmable-friction">Programmable Friction</a></li>
-        <li><a href="#a-new-security-boundary">A New Security Boundary</a></li>
         <li><a href="#conclusion">Conclusion</a></li>
       </ul>
     </li>
