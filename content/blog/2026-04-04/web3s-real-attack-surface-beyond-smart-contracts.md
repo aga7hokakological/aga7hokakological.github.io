@@ -1,12 +1,12 @@
 +++
 title = "Web3’s Real Attack Surface: Beyond Smart Contracts"
 subtitle = "Smart contracts are not the weakest link anymore."
-date = 2026-04-05
+date = 2026-04-04
 draft = false
 tags = ["ethereum", "solana", "infrastructure"]
 +++
 
-{{< x user="ResolvLabs" id="2035830314799599616" >}}
+{{< tweet user="ResolvLabs" id="2035830314799599616" >}}
 
 Once again its proven by the black hats that they don't care how secure your codebase is or how many audits you have done.
 
@@ -53,7 +53,7 @@ You can check complete postmortem of Drift Protocol [here](https://x.com/omerago
 These are no longer isolated events.
 
 They form a repeatable attack template:
-![alt](/blog/2026-04-02/attack.png)
+![alt](/blog/2026-04-04/attack.png)
 
 > Web3 has entered a post-exploit era — where attackers don’t break systems, they operate them.
 
@@ -68,7 +68,7 @@ This assumption is now outdated.
 
 Modern protocols operate across multiple layers:
 
-![services](/blog/2026-04-02/service.png)
+![services](/blog/2026-04-04/service.png)
 
 Audits focus almost exclusively on the smart contract layer.
 
@@ -116,7 +116,7 @@ If private keys are compromised then surely attacker can get hold of the whole T
 bloodbath that happens after that if not acted quickly. Same with admin roles of the protocol.
 You also need to keep in mind about deployment and backend infrastructure. If not then situation like [resolv protocol](https://www.chainalysis.com/blog/lessons-from-the-resolv-hack/#:~:text=The%20attacker%20compromised,operation%20they%20chose.) hack can happen.
 
-![execution-control](/blog/2026-04-02/exe-control.png)
+![execution-control](/blog/2026-04-04/exe-control.png)
 
 A protocol can be **perfectly secure** in the **execution plane** and still be **completely compromised** if the **control plane** is breached.
 
@@ -312,7 +312,7 @@ Security now depends on time, not just correctness.
 - Observability: Public execution queues
 - Context Sensitivity: Higher risk -> higher friction
 
-![evaluation](/blog/2026-04-02/evaluation.png)
+![evaluation](/blog/2026-04-04/evaluation.png)
 
 If protocols were to implement time delays on smart contract upgrades, treasury withdrawal, governance then 
 there is chance of detection of attack if it is happening then attackers might not be able drain the protocol.
