@@ -6,7 +6,7 @@ draft = false
 tags = ["ethereum", "solana", "infrastructure"]
 +++
 
-{{< tweet user="ResolvLabs" id="2035830314799599616" >}}
+{{< x user="ResolvLabs" id="2035830314799599616" >}}
 
 Once again its proven by the black hats that they don't care how secure your codebase is or how many audits you have done.
 
